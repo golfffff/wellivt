@@ -82,6 +82,48 @@
 	top:1px;
 }
 
+	      .card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 10px auto;
+      display: flex;
+      align-items: center;
+    }
+    
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    
+    .card-content {
+      flex-grow: 1;
+    }
+    
+    .card h2 {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .card p {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    
+    .card .label {
+      font-weight: bold;
+    }
+    
+    .card .data {
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -102,6 +144,16 @@
   </ul>
 
   <h3>Patient Data</h3>
+ <div class="card">
+    <img src="https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg" alt="Patient Profile">
+    <div class="card-content">
+      <h2>John Doe</h2>
+      <p><span class="label">HN:</span> <span class="data">2037/59</span></p>
+      <p><span class="label">Age:</span> <span class="data">35</span></p>
+      <p><span class="label">Gender:</span> <span class="data">Male</span></p>
+      <p><span class="label">Mobile no.:</span> <span class="data">0974589658</span></p>
+    </div>
+  </div>
   <iframe id="myFrame"></iframe>
   
   </div>
