@@ -22,8 +22,7 @@
       padding: 0;
     }
     .slist li{
-    margin:10px 0px;
-    border-bottom: 1px solid #D3D3D3;
+    margin:8px 0px;
     }
 
     li {
@@ -47,15 +46,32 @@
       height: 800px;
     }
     .sidebar {
+
       background-color: #f1f1f1;
-      padding: 20px;
+      padding: 10px;
       width: 200px;
-      transition: width 0.3s;
+      height: 100vh;
+      transition: width 0.1s;
+      transition: transform 0.1s ease-in-out;
+      transform: translateX(-180px);
+    }
+    .sidebar.active {
+      transform: translateX(0);
+    }
+    .toggle-btn {
+      position: relative;
+      top: 0px;
+      left: 170px;
+      cursor: pointer;
     }
         .content {
-      flex-grow: 1;
-      padding: 20px;
-      transition: margin-left 0.3s;
+      width:100%;
+      padding:20px;
+    }
+    .content.active{
+      position:absolute;
+      left:50px;
+      width:100%;
     }
     .myButton {
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -127,7 +143,10 @@
   </style>
 </head>
 <body>
-  <div class="sidebar" id="sidebar">
+  <div class="sidebar active" id="sidebar">
+      <div class="toggle-btn" onclick="toggleSideMenu()">
+  <img src="https://cdn-icons-png.flaticon.com/512/3451/3451498.png" style="width:36px;height:36px;" />
+      </div>
     <h1>WellOne</h1>
     <ul class="slist">
       <li>Appointment</li>
@@ -135,7 +154,7 @@
       <li><a>Patient</a></li>
     </ul>
   </div>
-<div class="content">
+<div class="content" id="content">
   <h2>Wellness Data</h2>
   <ul class="clist">
     <li class="myButton"><a href="#" onclick="displayURL('https://well-life-corp-admin.invitrace.app/administrator')">Well-Life</a></li>
@@ -151,7 +170,7 @@
       <p><span class="label">HN:</span> <span class="data">2037/59</span></p>
       <p><span class="label">Age:</span> <span class="data">35</span></p>
       <p><span class="label">Gender:</span> <span class="data">Male</span></p>
-      <p><span class="label">Mobile no.:</span> <span class="data">0974589658</span></p>
+      <p><span class="label">Mobile no.:</span> <span class="data">0915854478</span></p>
     </div>
   </div>
   <iframe id="myFrame"></iframe>
@@ -163,6 +182,13 @@
     //alert(url)
       var iframe = document.getElementById("myFrame");
       iframe.src = url;
+    }
+
+    function toggleSideMenu() {
+      var sideMenu = document.getElementById("sidebar");
+      var content = document.getElementById("content");
+      sideMenu.classList.toggle("active");
+      content.classList.toggle('active');
     }
   </script>
 </body>
