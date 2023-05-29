@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>WellOne</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
    body {
       font-family: Arial, sans-serif;
@@ -23,8 +24,13 @@
     }
     .slist li{
     margin:8px 0px;
+    height: 30px;
+    padding: 15px 0 0 5px;
+    align-content: center;
     }
-
+    .slist li:hover{
+      background-color: #86848427;
+    }
     li {
       margin-bottom: 10px;
       margin: 0px 5px
@@ -140,6 +146,9 @@
     .card .data {
       color: #555;
     }
+    .text-focus-in{animation:text-focus-in 0.3s cubic-bezier(.55,.085,.68,.53) both}
+
+@keyframes text-focus-in{0%{filter:blur(12px);opacity:0}100%{filter:blur(0);opacity:1}}
   </style>
 </head>
 <body>
@@ -147,15 +156,19 @@
       <div class="toggle-btn" onclick="toggleSideMenu()">
   <img src="https://cdn-icons-png.flaticon.com/512/3451/3451498.png" style="width:36px;height:36px;" />
       </div>
-    <h1>WellOne</h1>
+    <h1 style="position:absolute;left:10px;top:0px" class="text-focus-in">WellOne</h1>
+    <p>
+      <input type="text" style="width:150px;height: 25px;border-radius:1em;border: 1px solid #c2c2c2;padding:5px;" placeholder="Patient Search...">
+    </input>
+  </p>
     <ul class="slist">
       <li>Appointment</li>
       <li>Telemed</li>
-      <li><a>Patient</a></li>
+      <li><a>EMR</a></li>
     </ul>
   </div>
 <div class="content" id="content">
-  <h2>Wellness Data</h2>
+  <h2 style="padding: 10px;">Wellness Data</h2>
   <ul class="clist">
     <li class="myButton"><a href="#" onclick="displayURL('https://well-life-corp-admin.invitrace.app/administrator')">Well-Life</a></li>
     <li class="myButton"><a href="#" onclick="displayURL('https://get-health-admin-dev.invitrace.app/system/main')">Get-Health</a></li>
